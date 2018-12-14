@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>倒计时效果哟</title>
+    <style>
+        div{width: 220px;height: 77px;border: 1px solid red;}
+        .p1{float: left;width: 130px;height: 38px;line-height: 38px;font-size: 20px;text-align: center;margin-left: 6px;}
+        #time{float: left;display: block;height: 30px;line-height: 30px;font-size: 24px;color: red;}
+        .p2{float: left;width: 30px;height: 38px;line-height: 38px;font-size: 20px;text-align: center;margin-left: 6px;}
+    </style>
+    <script>
+        window.onload=function(){
+            var date=new Date("2018,12,23");
+            var now=new Date();
+            var time=date.getTime()-now.getTime();
+            var diffTime=Math.ceil(time/(24*60*60*1000));
+            if(diffTime>0){
+                document.getElementById("time").innerHTML=diffTime;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <p class="p1">距离考研还有</p><p id="time"></p><p class="p2">天！</p>
+    </div>
+</body>
+</html>
