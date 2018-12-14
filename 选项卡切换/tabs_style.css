@@ -1,0 +1,37 @@
+/* 初始化 */
+*{font-size: 16px;font-family: "Microsoft YaHei";}
+
+#tabs{
+    width:300px; 
+    height:150px; 
+    padding:5px; 
+    margin:20px;
+ }
+ #tabs ul{
+    height:30px; 
+    line-height:30px;
+ }
+ #tabs ul li{
+    float:left; 
+    width:60px; 
+    height:28px; 
+    line-height:28px; 
+    text-align:center;
+    margin:0px 3px; 
+    border:1px solid #aaa;
+    border-bottom:none;
+    cursor:pointer; 
+    background:#fff; 
+ }
+ #tabs ul li.on{
+    border-top:2px solid saddlebrown; 
+    border-bottom:2px solid #fff;
+ }
+ #tabs div{
+    height:120px; 
+    line-height:30px; 
+    border:1px solid #336699;
+    border-top:2px saddlebrown solid;
+    padding:5px;
+ }
+ .hide{display:none;}
