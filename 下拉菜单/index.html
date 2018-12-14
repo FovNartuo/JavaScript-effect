@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>JS实现下拉菜单效果</title>
+	
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+    <script type="text/javascript" src="index.js"></script>
+</head> 
+<body>
+<div id="nav">
+	<ul> 
+		<li><a href="#">新闻</a></li>
+		<li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a href="#">体育</a>
+			<ul>
+				<li><a href="#">乒乓球</a></li>
+				<li><a href="#">羽毛球</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">VR</a></li>
+				<li><a href="#">人工智能</a></li>
+				<li><a href="#">大数据</a></li>
+			</ul>
+		</li>
+		<li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)"><a href="#">科技</a>
+			<ul>
+				<li><a href="#">VR</a></li>
+				<li><a href="#">人工智能</a></li>
+				<li><a href="#">大数据</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">乒乓球</a></li>
+				<li><a href="#">羽毛球</a></li>
+			</ul>
+		</li>
+		<li><a href="#">文化</a></li>
+		<li><a href="#">娱乐</a></li>
+		<li><a href="#">关于我们</a></li>
+
+	</ul>
+
+</div>
+</body>
+</html>

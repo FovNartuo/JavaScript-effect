@@ -1,0 +1,40 @@
+a{
+    color:#000;
+    display:block;
+}
+ 
+body{
+    font-family:Verdana, Geneva, sans-serif; 
+    font-size:14px;
+}
+#nav{
+    width:600px;
+    height:40px;
+    background-color:#eee;
+    margin:0 auto;
+}
+
+ul li{
+    float:left;
+    line-height:40px; 
+    text-align:center;
+    width:100px;
+}
+ 
+
+a:hover{
+    display: block;
+    color:#F00; 
+    background-color:#ccc;
+}
+ 
+ 
+ul li ul li{
+    float:none;
+    background-color:#eee; 
+    margin:2px 0px;
+}
+ 
+ul li ul{
+    display:none;
+}
