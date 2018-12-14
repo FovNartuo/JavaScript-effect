@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>移入移出</title>
+    <style>
+        div{width: 250px;height: 30px;background-color: blue;position: absolute;left: -200px;top: 50px;}
+        span{float: right;color: #fff;border: 4px solid red;}
+    </style>
+
+    <script>
+        window.onload=function(){
+            var oDiv=document.getElementById("div");
+            oDiv.onmouseover=function(){
+                startMove(0);
+            };
+            oDiv.onmouseout=function(){
+                startMove(-200);
+            }
+        }
+        var timer=null;
+        function startMove(iTarget){
+            clearInterval(timer);
+            var oDiv=document.getElementById("div");
+            timer=setInterval(function(){
+                //在接近目标值时候速度变慢，对速度需要向上向下的取整判断
+                var speed=(iTarget-oDiv.offsetLeft)/15;
+                speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+                if(oDiv.offsetLeft == iTarget){
+                    clearInterval(timer);
+                }else{
+                    oDiv.style.left=oDiv.offsetLeft+speed+"px";
+                }
+                
+            },30);
+        }
+    </script>
+</head>
+<body>
+    <div id="div">
+        <span>share</span>
+    </div>
+</body>
+</html>

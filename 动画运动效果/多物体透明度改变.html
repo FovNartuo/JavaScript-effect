@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS动画之多物体透明度修改</title>
+    <style>
+      *{padding: 0;margin: 0;}
+
+      div{
+          width: 200px;
+          height: 100px;
+          background: red;
+          float: left;
+          margin: 10px;
+          opacity: 0.3;
+      }
+    </style>
+    <script>
+        window.onload=function(){
+            var oDiv=document.getElementsByTagName("div");
+            for(var i=0; i<oDiv.length; i++){
+
+             // 给每个div元素各自清除定时器仍存在bug，是因为之前设置了统一的透明度值，多物体运动中只能分别设置   
+              oDiv[i].alpha=30;
+              oDiv[i].onmouseover=function(){
+                startMove(this,100);
+              };
+              oDiv[i].onmouseout=function(){
+                startMove(this,30);
+              }
+            }
+        }
+
+        // var alpha=30;
+        function startMove(obj,iTarget){
+            clearInterval(obj.timer);
+
+            obj.timer=setInterval(function(){
+                var speed=0;
+                if(obj.alpha>iTarget){
+                    speed=-5;
+                }else{
+                    speed=5;
+                }
+                if(obj.alpha == iTarget){
+                    clearInterval(obj.timer);
+                }else{
+                    obj.alpha += speed;
+                    obj.style.opacity=obj.alpha/100;
+                }  
+            },30);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+</body>
+</html>

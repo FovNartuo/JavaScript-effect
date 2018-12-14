@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS动画-移入移出</title>
+    <style>
+        div{width: 250px;height: 30px;background-color: blue;position: absolute;left: -200px;top: 50px;}
+        span{float: right;color: #fff;}
+    </style>
+    <script>
+        window.onload=function(){
+            var oDiv=document.getElementById("div");
+            oDiv.onmouseover=function(){
+                startMove(0);
+            };
+            oDiv.onmouseout=function(){
+                startMove(-200);
+            }
+        }
+
+        var timer=null;
+        function startMove(iTarget){
+            clearInterval(timer);
+            var oDiv=document.getElementById("div");
+            timer=setInterval(function(){
+                var speed=0;
+                if(oDiv.offsetLeft>iTarget){
+                    speed=-5;
+                }else{
+                    speed=5;
+                }
+                if(oDiv.offsetLeft == iTarget){
+                    clearInterval(timer);
+                }else{
+                    oDiv.style.left=oDiv.offsetLeft+speed+"px";
+                }  
+            },30);
+        }
+    </script>
+</head>
+<body>
+    <div id="div">
+        <span>share</span>
+    </div>            
+</body>
+</html>
