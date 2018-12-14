@@ -1,0 +1,30 @@
+/* css3新特性之多栏布局 */
+
+#main{
+    -webkit-column-width:223px;
+    -moz-column-width:223px;
+    -o-column-width:223px;
+    -ms-column-width:223px;
+    column-width:223px;
+    -webkit-column-gap:4px;
+    -moz-column-gap: 4px;
+    -o-column-gap:4px;
+    -ms-column-gap:4px;
+    column-gap: 4px;
+}
+
+.box{padding: 10px 0 0 15px;}
+
+.pic{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    width: 186px;
+}
+
+.pic img{
+    display: block;
+    width: 186px;
+    height: auto;
+}
