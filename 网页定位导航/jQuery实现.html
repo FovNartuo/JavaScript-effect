@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网页定位导航</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <style>
+        .box{width: 610px;margin: 50px auto;}
+        .box .content{width: 550px;border: 1px dashed #ccc;margin: 0 auto;margin-bottom: 88px;}
+        .box .content h2{width:200px;margin:10px auto;font-size:20px;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid #aaa;  }
+        .box .content div{display: inline-block;margin-bottom: 16px;}
+        .box .content div img{width: 180px;}
+        ul{position: fixed;top: 80px;left: 50%;margin-left: 270px;list-style: none;}
+        ul li{margin-bottom: 8px;border: 1px solid #337ab7;border-radius: 5px;text-align: center;}
+        ul li a{width:100px;display: block;margin: 5px 0;font-size: 14px;font-weight: bold;}
+        ul li a:hover,
+        ul li a.current{background: #86c2f7;color: #fff;text-decoration: none;}
+    </style>
+    <script src="jquery-1.10.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                var top = $(document).scrollTop();       // 获取滚动条位置
+                // console.log(top);
+                var menu = $("#menu");                   // 获取导航
+                var items = $("#box").find(".content");  // 获取每一个内容区,通过id找到class效率高
+                var currentId = "";                      // 当前所在楼层id
+                
+                // 遍历每一个内容区做判断
+                items.each(function(){
+                    var t = $(this);
+                    var itemTop = t.offset().top;
+                    // console.log(itemTop);
+                    if(top > itemTop){
+                        currentId = "#" + t.attr("id");
+                    }else{
+                        return false;
+                    }
+                });
+                // 给相应楼层的a标签添加class=current,取消其他楼层class
+                var currentLink = menu.find(".current");
+                if(currentId && currentLink.attr("href") != currentId){
+                    currentLink.removeClass("current");
+                    menu.find('[href=' + currentId + ']').addClass("current");
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul id="menu">
+        <li><a href="#item1" class="current">画画的哆啦a梦</a></li>
+        <li><a href="#item2">骑车的小狗</a></li>
+        <li><a href="#item3">海绵宝宝</a></li>
+        <li><a href="#item4">跳绳的小猪</a></li>
+        <li><a href="#item5">飞翔的小人</a></li>
+    </ul>
+
+    <div class="box" id="box">
+        <div id="item1" class="content">
+            <h2 class="text-center">画画的哆啦a梦</h2>
+            <div><img src="images/ddcat.png" alt=""></div>
+            <div><img src="images/ddcat.png" alt=""></div>
+            <div><img src="images/ddcat.png" alt=""></div>
+            <div><img src="images/ddcat.png" alt=""></div>
+            <div><img src="images/ddcat.png" alt=""></div>
+            <div><img src="images/ddcat.png" alt=""></div>
+            <div><img src="images/ddcat.png" alt=""></div>
+            <div><img src="images/ddcat.png" alt=""></div>
+            <div><img src="images/ddcat.png" alt=""></div>
+        </div>
+        <div id="item2" class="content">
+            <h2 class="text-center">骑车的小狗</h2>
+            <div><img src="images/dog.png" alt=""></div>
+            <div><img src="images/dog.png" alt=""></div>
+            <div><img src="images/dog.png" alt=""></div>
+            <div><img src="images/dog.png" alt=""></div>
+            <div><img src="images/dog.png" alt=""></div>
+            <div><img src="images/dog.png" alt=""></div>
+            <div><img src="images/dog.png" alt=""></div>
+            <div><img src="images/dog.png" alt=""></div>
+            <div><img src="images/dog.png" alt=""></div>
+        </div>
+        <div id="item3" class="content">
+            <h2 class="text-center">海绵宝宝</h2>
+            <div><img src="images/hmbaobao.png" alt=""></div>
+            <div><img src="images/hmbaobao.png" alt=""></div>
+            <div><img src="images/hmbaobao.png" alt=""></div>
+            <div><img src="images/hmbaobao.png" alt=""></div>
+            <div><img src="images/hmbaobao.png" alt=""></div>
+            <div><img src="images/hmbaobao.png" alt=""></div>
+            <div><img src="images/hmbaobao.png" alt=""></div>
+            <div><img src="images/hmbaobao.png" alt=""></div>
+            <div><img src="images/hmbaobao.png" alt=""></div>
+        </div>
+        <div id="item4" class="content">
+            <h2 class="text-center">跳绳的小猪</h2>
+            <div><img src="images/jump.png" alt=""></div>
+            <div><img src="images/jump.png" alt=""></div>
+            <div><img src="images/jump.png" alt=""></div>
+            <div><img src="images/jump.png" alt=""></div>
+            <div><img src="images/jump.png" alt=""></div>
+            <div><img src="images/jump.png" alt=""></div>
+            <div><img src="images/jump.png" alt=""></div>
+            <div><img src="images/jump.png" alt=""></div>
+            <div><img src="images/jump.png" alt=""></div>
+        </div>
+        <div id="item5" class="content">
+            <h2 class="text-center">飞翔的小人</h2>
+            <div><img src="images/lovefly.png" alt=""></div>
+            <div><img src="images/lovefly.png" alt=""></div>
+            <div><img src="images/lovefly.png" alt=""></div>
+            <div><img src="images/lovefly.png" alt=""></div>
+            <div><img src="images/lovefly.png" alt=""></div>
+            <div><img src="images/lovefly.png" alt=""></div>
+            <div><img src="images/lovefly.png" alt=""></div>
+            <div><img src="images/lovefly.png" alt=""></div>
+            <div><img src="images/lovefly.png" alt=""></div>
+        </div>
+    </div>
+</body>
+</html>
