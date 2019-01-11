@@ -1,3 +1,4 @@
+//控制li元素的display值
 function displaySubMenu(li) {
  
     var subMenu = li.getElementsByTagName("ul")[1];
