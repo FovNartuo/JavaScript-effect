@@ -156,3 +156,7 @@ deleteAll.onclick = function(){
         }
     }
 }
+
+checkAllInputs[0].checked = true;
+checkAllInputs[0].onclick();
+
