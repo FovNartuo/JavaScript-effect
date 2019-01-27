@@ -126,6 +126,7 @@ for(var i=0; i<tr.length; i++){
                     reduce.innerHTML = "";
                 }
             break;
+               //单行删除
             case "delete":
                 var conf = confirm("确定要删除吗？")
                 if(conf){
@@ -142,5 +143,16 @@ for(var i=0; i<tr.length; i++){
 }
 
 deleteAll.onclick = function(){
-    alert("test")
+    if(selectedTotal.innerHTML != "0"){
+        var conf = confrim("确定要删除吗？");
+        if(conf){
+            for(var i=0; i<tr.length; i++){
+                var input = tr[i].getElementsByTagName("input")[0];
+                if(input.checked){
+                    tr[i].parentNode.removeChild(tr[i]);
+                    i--;
+                }
+            }
+        }
+    }
 }
