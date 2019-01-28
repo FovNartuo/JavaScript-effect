@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+#sidebar{
+    width: 38px;
+    background: #e1e1e1;
+    padding-top: 200px;
+    position: fixed;
+    min-height: 100%;
+    /* z-index: 99; */
+}
+
+.item{
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+    text-align: center;
+    margin-top: 6px;
+}
+
+#closebar{
+    position: absolute;
+    bottom: 50px;
+    width: 38px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#barcontent{
+    position: fixed;
+    left: 38px;
+    min-height: 100%;
+    width: 200px;
+    background: #e1e1e1;
+    border: 1px solid black;
+    /* z-index: 9; */
+}
+
+#barcontent-close{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
