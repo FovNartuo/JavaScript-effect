@@ -9,7 +9,7 @@
     padding-top: 200px;
     position: fixed;
     min-height: 100%;
-    /* z-index: 99; */
+    z-index: 99;
 }
 
 .item{
@@ -27,19 +27,52 @@
     cursor: pointer;
 }
 
-#barcontent{
+.nav-content{
     position: fixed;
-    left: 38px;
     min-height: 100%;
     width: 200px;
     background: #e1e1e1;
     border: 1px solid black;
-    /* z-index: 9; */
+    z-index: 9;
+    opacity: 0;
 }
 
-#barcontent-close{
+.navcontent-close{
     position: absolute;
     right: 5px;
     top: 5px;
     cursor: pointer;
+}
+
+.sidebar-move-left{
+    animation-name: sml;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes sml{
+    from{}
+    to{
+        transform: translateX(-60px);
+    }
+}
+
+/* 旋转角度和增大无效 */
+.closeBar-move-right{
+    animation-name: cmr;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: cmr;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes cmr{
+    from{}
+    to{
+        /* 旋转一周360度+45度（变成+号） */
+        transform: translateX(100px),rotate(405deg),scale(1.5);
+        -webkit-transform: translateX(100px),rotate(405deg),scale(1.5);
+    }
 }
